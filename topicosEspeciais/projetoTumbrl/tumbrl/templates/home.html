@@ -1,0 +1,84 @@
+{% extends "perry.html" %}
+
+{% block titulo %} HOMMER {% endblock %}
+
+{% block body %}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        text-align: center;
+        padding: 20px;
+    }
+
+    form {
+        width: 300px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: #666;
+    }
+</style>
+
+{% block formulario %}
+    <form method="POST">
+        {{ form.csrf_token }}
+
+        <h2>Login</h2>
+
+        <label for="email"></label>
+        {{ form.email.label() }}
+        {{ form.email() }}
+
+        <label for="password"></label>
+        {{ form.password.label() }}
+        {{ form.password() }}
+
+        {{ form.btn() }}
+    </form>
+{% endblock %}
+
+<p>Olá, seja bem-vindo à Tumbrl!</p>
+
+{% endblock %}
+

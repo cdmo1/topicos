@@ -1,0 +1,120 @@
+{% extends "perry.html" %}
+
+{% block body %}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        text-align: center;
+        padding: 20px;
+    }
+
+    form {
+        width: 300px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    input {
+        width: calc(100% - 22px);
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: inline-block;
+    }
+
+    .password-toggle {
+        width: 22px;
+        height: 22px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        vertical-align: middle;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: #666;
+    }
+
+    .error-message {
+        color: #ff0000;
+        margin-top: 8px;
+    }
+</style>
+
+{% block formulario %}
+    <form method="POST">
+        {{ form.csrf_token }}
+
+        <h2>Criar Conta</h2>
+
+        <label for="email"></label>
+        {{ form.email.label() }}
+        {{ form.email() }}
+
+        <label for="usarname"></label>
+        {{ form.usarname.label() }}
+        {{ form.usarname() }}
+
+        <label for="password"></label>
+        {{ form.password.label() }}
+        <input type="password" name="password" id="password" class="password-input" required>
+        <button type="button" class="password-toggle" onclick="togglePasswordVisibility()">&#x1F441;</button>
+
+        <label for="checkPassword"></label>
+        {{ form.checkPassword.label() }}
+        <input type="password" name="checkPassword" id="checkPassword" class="password-input" required>
+        <button type="button" class="password-toggle" onclick="toggleCheckPasswordVisibility()">&#x1F441;</button>
+
+        {{ form.btn() }}
+
+        {% if form.errors %}
+            <p class="error-message">{{ form.errors.get('checkPassword') }}</p>
+        {% endif %}
+    </form>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            passwordInput.type = (passwordInput.type === 'password') ? 'text' : 'password';
+        }
+
+        function toggleCheckPasswordVisibility() {
+            var checkPasswordInput = document.getElementById('checkPassword');
+            checkPasswordInput.type = (checkPasswordInput.type === 'password') ? 'text' : 'password';
+        }
+    </script>
+{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+--------------------------------------------------------------------------------
+Links uteis de como fazer no Flask:
+
+Botão usando Forms
+- https://stackoverflow.com/questions/19794695/flask-python-buttons
+- https://predictivehacks.com/?all-tips=how-to-add-action-buttons-in-flask
+
+Botão usando OnCick
+- https://www.quora.com/How-do-I-call-function-from-my-Python-file-after-clicking-on-the-button-from-an-HTML-file
+- https://stackoverflow.com/questions/42601478/flask-calling-python-function-on-button-onclick-event
+
+Dynamic Select Field
+- https://www.youtube.com/watch?v=I2dJuNwlIH0
+
+Alternativa ao Forms que fizemos
+- https://flask.palletsprojects.com/en/3.0.x/patterns/wtforms/
+- https://python-adv-web-apps.readthedocs.io/en/latest/flask_forms.html
+- https://www.youtube.com/watch?v=Rxp3mkg2mRQ
+- https://flask-wtf.readthedocs.io/en/1.2.x/
+
+
+---------------------------------------------------------------------------------
+Recomendação CSS, use bootstrap para ficar mais bonito:
+- (site)  https://getbootstrap.com
+- (setup) https://getbootstrap.com/docs/5.3/getting-started/introduction/
+- (docs)  https://getbootstrap.com/docs/5.3/forms/overview/
